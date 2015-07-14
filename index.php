@@ -1,10 +1,10 @@
 <?php get_header(); ?>
 
-		
+
 		<div class="column-one">
-			
-			
-			
+
+
+
 			<?php
 			// WP 3.0 PAGED BUG FIX
 			if ( get_query_var('paged') )
@@ -24,7 +24,7 @@
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
 
-				<header class="clearfix">				
+				<header class="clearfix">
 					<ul class="meta">
 						<li><?php echo get_the_date("M d / Y"); ?></li>
 						<li><span class="comments"><?php comments_popup_link(__('0', 'site5framework'), __('1', 'site5framework'), __('%', 'site5framework')); ?> </span></li>
@@ -50,8 +50,8 @@
 
 
 			<!-- begin #pagination -->
-				<?php if (function_exists("emm_paginate")) { 
-						emm_paginate();  
+				<?php if (function_exists("emm_paginate")) {
+						emm_paginate();
 					 } else { ?>
 				<div class="navigation">
 			        <div class="alignleft"><?php next_posts_link('Older') ?></div>

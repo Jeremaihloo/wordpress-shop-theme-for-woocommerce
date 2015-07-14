@@ -64,6 +64,6 @@
 		</div><!-- end #column-one -->
 
 		<div class="column-two">
-			<?php get_sidebar('primary'); ?>
+<!--			<?php get_sidebar('primary'); ?>-->
 		</div><!-- end #column-two -->
 <?php get_footer(); ?>

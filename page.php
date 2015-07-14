@@ -4,7 +4,7 @@
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<article>
 				
-				<header class="clearfix">				
+				<header class="clearfix">
 					<ul class="meta">
 						<li><?php echo get_the_date("M d / Y"); ?></li>
 						<li><span class="comments"><?php comments_popup_link(__('0', 'site5framework'), __('1', 'site5framework'), __('%', 'site5framework')); ?> </span></li>
@@ -45,9 +45,4 @@
 
 
 	</div>
-
-	<div class="column-two">
-		<?php get_sidebar('primary'); ?>
-	</div><!-- end #column-two -->
-
-<?php get_footer(); ?>
+<!--<?php get_footer(); ?>-->
