@@ -9,7 +9,9 @@ select,
 textarea {
     color: #222;
 }
-
+ui,li{
+  list-style:none;
+}
 body {
     font-size: 12px;
     line-height: 1.6em;
@@ -74,7 +76,7 @@ body {
 }
 
 #page {
-    position: 
+    position:
 }
 
 .wrapper {
@@ -92,7 +94,7 @@ body {
    =================== */
 
 .header-container {
-    background: url(../img/bk_header.png);
+    /*background: url(../img/bk_header.png);*/
 }
 .subheader-container {
 
@@ -134,7 +136,7 @@ article header {
 
 .footer-container,
 .main .column-two {
-    
+
 }
 
 .footer-container,
@@ -652,7 +654,7 @@ article {
     height: 140px;
     background-image: url(../img/bk_header.png);
     line-height: 140px;
-    text-align: center;    
+    text-align: center;
     color: #00BFFF;
     font-size: 200%;
     font-weight: lighter;
@@ -688,17 +690,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66ffffff', e
 
 #contact-map {
     float: left;
-    width: 100%; 
-    height: 350px; 
+    width: 100%;
+    height: 350px;
     margin: 0 0 15px 0;
 }
 
 #contact-map iframe {
-    border: 0; 
+    border: 0;
 }
 
 #contact-form {
-    width: 60%; 
+    width: 60%;
     float: left;
     margin: 0 30px 0 0;
 }
@@ -708,7 +710,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66ffffff', e
 }
 
 #contact-data {
-    float: left; 
+    float: left;
     width: 35%;
     margin: 28px 0 0 0;
 }
@@ -722,7 +724,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66ffffff', e
 #contact-data .contact-data-field {
     float: left;
     width: 35%;
-    font-weight: bold; 
+    font-weight: bold;
 }
 
 #contact-data .contact-data-info {
@@ -752,7 +754,7 @@ color: #333;
 background: #FCE2D4 url('../img/error.png') no-repeat 5px 50%;
 margin-top: 5px;
 display:block;
-clear: both; 
+clear: both;
 padding:7px;
 padding-left:30px;
 border-radius:6px;
@@ -771,7 +773,7 @@ width:270px;
 }
 
 .filterable li {
-    float: left; 
+    float: left;
     margin: 0 20px 0 0;
 }
 
@@ -807,7 +809,7 @@ width:270px;
     width: 100%
 }
 .portfolio-items li img {
-    max-width: 300px !important; 
+    max-width: 300px !important;
 }
 .portfolio-items .portfolio-item-holder {
     height: 250px;
@@ -935,11 +937,11 @@ width:270px;
     }
 
     #slider_container {
-        height: 490px !important; 
+        height: 490px !important;
         margin-top: -60px !important;
     }
     .flexslider .slides li {
-        height: 490px !important; 
+        height: 490px !important;
     }
     .slides li img {
         width: 100% !important;
@@ -1066,11 +1068,11 @@ width:270px;
     }
 
     #slider_container {
-        height: 450px !important; 
+        height: 450px !important;
         margin-top: -194px !important;
     }
     .flexslider .slides li {
-        height: 450px !important; 
+        height: 450px !important;
     }
     .flexslider .slides li img {
         margin-top: 180px !important;
@@ -1094,7 +1096,7 @@ width:270px;
         float: none;
         clear: both;
         margin: -45px auto 0;
-        height: 24px; 
+        height: 24px;
         position: relative;
         top: 60px;
     }
@@ -1118,7 +1120,7 @@ width:270px;
         width: 250px;
     }
 
-    
+
 
     .portfolio-items li {
         width: 275px;
@@ -1134,7 +1136,7 @@ width:270px;
         width: 100%;
     }
 
-    
+
 
 }
 
@@ -1144,9 +1146,9 @@ width:270px;
     INTERMEDIATE: Menu
    ==================== */
 
-   
+
     .top-menu-container {
-        
+
     }
 
     #menu-icon {
@@ -1185,7 +1187,7 @@ width:270px;
 
 
 
-    
+
 }
 
 
@@ -1218,7 +1220,7 @@ width:270px;
         float: left;
     }
 
-    
+
 
 /* ============
     WIDE: Main

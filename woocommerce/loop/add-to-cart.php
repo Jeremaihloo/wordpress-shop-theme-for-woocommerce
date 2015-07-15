@@ -1,3 +1,4 @@
+
 <?php
 /**
  * Loop Add to Cart
@@ -21,3 +22,4 @@ echo apply_filters( 'woocommerce_loop_add_to_cart_link',
 		esc_html( $product->add_to_cart_text() )
 	),
 $product );
+

@@ -35,11 +35,21 @@ if ( 0 == ( $woocommerce_loop['loop'] - 1 ) % $woocommerce_loop['columns'] || 1 
 if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 	$classes[] = 'last';
 ?>
-<li <?php post_class( $classes ); ?>>
 
 	<?php do_action( 'woocommerce_before_shop_loop_item' ); ?>
 
-	<a href="<?php the_permalink(); ?>">
+  <div class="blend-listview-main">
+    <div class="blend-flexbox blend-listview-item">
+      <span class="blend-checkbox blend-checkbox-default blend-flexbox-item"></span>
+      <div class="blend-flexbox-item">
+        <a href="<?php the_permalink(); ?>">
+          <img class="blend-listview-item-pic" src="http://pic.4j4j.cn/upload/pic/20130530/f41069c61a.jpg" alt="pic"/>
+        </a>
+      </div>
+      <div class="blend-flexbox-item blend-flexbox-ratio">
+        <div class="blend-listview-item-title">
+
+
 
 		<?php
 			/**
@@ -52,7 +62,11 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 		?>
 
 		<?php the_title(); ?>
-
+      </div>
+      <div class="blend-listview-item-badge">
+        <span class="blend-badge blend-badge-empty">随订随用</span>
+        <span class="blend-badge blend-badge-empty">随订随用</span>
+      </div>
 		<?php
 			/**
 			 * woocommerce_after_shop_loop_item_title hook
@@ -62,9 +76,8 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 			 */
 			do_action( 'woocommerce_after_shop_loop_item_title' );
 		?>
+</div>
 
-	</a>
 
 	<?php do_action( 'woocommerce_after_shop_loop_item' ); ?>
 
-</li>

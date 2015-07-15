@@ -1,3 +1,4 @@
+<script>alert("...");</script>
 <?php
 /**
  * The Template for displaying all single products.

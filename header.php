@@ -12,22 +12,20 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<meta name="keywords" content="<?php echo of_get_option('metakeywords'); ?>" />
 	<meta name="description" content="<?php echo of_get_option('metadescription'); ?>" />
-    
+
 	<!-- stylesheet -->
 	<link rel="stylesheet" media="all" href="<?php bloginfo('stylesheet_url'); ?>"/>
 
     <!--    my private-->
-	   	<link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/blendui/2.0-alpha/blendui.min.css" />
-        <script type="text/javascript" src="http://apps.bdimg.com/libs/blendui/2.0-alpha/blendui.min.js"></script>
-        
-        <link rel="stylesheet" type="text/css" href="ui-blend.css" />
-        <script type="text/javascript" src="ui-blend.js"></script>
+	   	  <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/blendui/2.0-alpha/blendui.min.css" />
+<link rel"stylesheet" type="text/css" href="<?php echo ( bloginfo('template_url') . '/ui-blend.css' );?>" />
+  <script src="<?php echo ( bloginfo('template_url') . '/ui-blend.js' );?>"></script>
 <!--	-->
 	<!-- stylesheet -->
 
-	
+
     <!-- custom typography-->
-    <?php if(of_get_option('customtypography') == '1') { ?>     
+    <?php if(of_get_option('customtypography') == '1') { ?>
 		<?php if(of_get_option('headingfontlink') != '') { ?>
 			<?php echo stripslashes(html_entity_decode(of_get_option('headingfontlink')));?>
 		<?php } ?>
@@ -37,7 +35,7 @@
 	<?php } ?>
 	<!-- custom typography -->
 
-   
+
 
 <!-- wp_head -->
 <?php wp_head(); ?>
@@ -71,12 +69,12 @@
 							</div>
 						</nav>
 					</div>
-           		</div>           	   
+           		</div>
            </header>
         </div>
 
 		<!-- .main-container -->
 		<div class="main-container">
-			
+
 
 			<div class="main wrapper clearfix">

@@ -67,5 +67,7 @@ function s5pr($obj) {
 Fix rel validation on category links
 
 *********************************************************************************************/
-add_filter( 'the_category', 'add_nofollow_cat' );  
+add_filter( 'the_category', 'add_nofollow_cat' );
 function add_nofollow_cat( $text ) { $text = str_replace('rel="category tag"', "", $text); return $text; }
+
+
