@@ -31,7 +31,7 @@ $woocommerce_loop['loop']++;
 		echo ' last';
 	?>">
 
-
+	<?php do_action( 'woocommerce_before_subcategory', $category ); ?>
 
 	<a href="<?php echo get_term_link( $category->slug, 'product_cat' ); ?>">
 
@@ -41,17 +41,17 @@ $woocommerce_loop['loop']++;
 			 *
 			 * @hooked woocommerce_subcategory_thumbnail - 10
 			 */
-			//do_action( 'woocommerce_before_subcategory_title', $category );
+			do_action( 'woocommerce_before_subcategory_title', $category );
 		?>
 
-		<li>
+		<h3>
 			<?php
 				echo $category->name;
 
-				//if ( $category->count > 0 )
-					//echo apply_filters( 'woocommerce_subcategory_count_html', ' <mark class="count">(' . $category->count . ')</mark>', $category );
+				if ( $category->count > 0 )
+					echo apply_filters( 'woocommerce_subcategory_count_html', ' <mark class="count">(' . $category->count . ')</mark>', $category );
 			?>
-		</li>
+		</h3>
 
 		<?php
 			/**
