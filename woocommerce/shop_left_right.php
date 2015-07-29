@@ -93,10 +93,40 @@ if ( $product_categories ) {
     $("#sidenav").sidenav({});
 
     function addToCart(url){
-        jQuery(document).ready(function($){
-            $.get(url, function(response) {
-                console.log('add to cart success !');
-            });
+        $.get(url, function(response) {
+            console.log('add to cart success !');
         });
     }
+    var cart = JSON.parse('<?php echo json_encode(WC()->cart->get_cart());?>');
+
+    function removeFromCart(product_id){
+        var cart = new Array();
+        var str="";
+        $('.blend-counter-input').each(function (index) {
+
+           if($(this).val()!='0'){
+               var count = 0;
+               if($(this).attr('data-id')==product_id){
+                   count = parseInt($(this).val()) - 1;
+               }else{
+                   count = parseInt($(this).val());
+               }
+               if(count>0){
+                   str+='cart['+$(this).attr('data-key')+'][qty]='+count+"&";
+               }
+           }
+        });
+        str+='update_cart=更新购物车&';
+        str+='_wpnonce=<?php echo wp_create_nonce('woocommerce-cart'); ?>'
+
+        $.post('<?php echo WC()->cart->get_cart_url(); ?>',str,function (response){
+            console.log('update cart success !')
+        });
+        console.log('removeFromCart');
+    }
+    function updateUI(){
+        console.log('updateUI');
+    }
+    updateUI();
+
 </script>

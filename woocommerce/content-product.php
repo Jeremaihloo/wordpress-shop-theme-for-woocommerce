@@ -42,10 +42,6 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 				<a href="<?php the_permalink(); ?>"><img class="blend-listview-item-pic" src="<?php echo wc_placeholder_img_src(); ?>" alt="pic"/></a>
 			</div>
 
-
-<!--	--><?php //do_action( 'woocommerce_before_shop_loop_item' ); ?>
-
-
 			<div class="blend-flexbox-item blend-flexbox-ratio">
 				<div class="blend-listview-item-title">
 					<?php the_title(); ?>
@@ -58,32 +54,20 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 					<?php echo woocommerce_template_loop_price(); ?>
 				</div>
 			</div>
-
-		<?php
-			/**
-			 * woocommerce_before_shop_loop_item_title hook
-			 *
-			 * @hooked woocommerce_show_product_loop_sale_flash - 10
-			 * @hooked woocommerce_template_loop_product_thumbnail - 10
-			 */
-//			do_action( 'woocommerce_before_shop_loop_item_title' );
-		?>
-
-		<?php
-			/**
-			 * woocommerce_after_shop_loop_item_title hook
-			 *
-			 * @hooked woocommerce_template_loop_rating - 5
-			 * @hooked woocommerce_template_loop_price - 10
-			 */
-//			do_action( 'woocommerce_after_shop_loop_item_title' );
-		?>
-
-
-<!--	--><?php //do_action( 'woocommerce_after_shop_loop_item' ); ?>
 			<div data-blend-widget="counter" class="blend-counter blend-listview-conter-box">
-				<div class="blend-counter-minus"></div>
-				<input class="blend-counter-input" type="text" value="0">
+				<div class="blend-counter-minus" onclick="removeFromCart(<?php echo $product->id; ?>)"></div>
+				<?php
+
+				foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
+
+					if($product->id==$cart_item['product_id']){
+						$current_product_count = $cart_item['quantity'];
+						$current_product_key = $cart_item_key;
+					}
+				}
+
+				?>
+				<input class="blend-counter-input" type="text" data-key="<?php echo $current_product_key; ?>" data-id="<?php echo $product->id; ?>" value="<?php echo $current_product_count; ?>">
 				<div class="blend-counter-plus" onclick="addToCart(<?php echo "'".$product->add_to_cart_url()."'"; ?>)"></div>
 			</div>
 		</div>
