@@ -6,7 +6,7 @@
             <span class="blend-header-item">选择商品</span>
         </span>
         <span class="blend-header-right">
-            <a href="javascript:window.location=<?php echo "'".WC()->cart->get_cart_url()."'" ?>" class="blend-header-item  blend-button blend-button-red">结算</a>
+            <a href="javascript:updateToCart()" class="blend-header-item  blend-button blend-button-red">结算</a>
         </span>
 </header>
 
@@ -111,7 +111,7 @@ if ( $product_categories ) {
                }else{
                    count = parseInt($(this).val());
                }
-               if(count>0){
+               if(count>=0){
                    str+='cart['+$(this).attr('data-key')+'][qty]='+count+"&";
                }
            }
@@ -123,6 +123,23 @@ if ( $product_categories ) {
             console.log('update cart success !')
         });
         console.log('removeFromCart');
+    }
+    function updateToCart(){
+        str='';
+        $('.blend-counter-input').each(function (index) {
+
+            if($(this).val()!='0'){
+                count = parseInt($(this).val());
+                str+='cart['+$(this).attr('data-key')+'][qty]='+count+"&";
+            }
+        });
+        str+='update_cart=更新购物车&';
+        str+='_wpnonce=<?php echo wp_create_nonce('woocommerce-cart'); ?>'
+
+        $.post('<?php echo WC()->cart->get_cart_url(); ?>',str,function (response){
+            console.log('update To Cart success !')
+            window.location.href='<?php echo WC()->cart->get_cart_url(); ?>';
+        });
     }
     function updateUI(){
         console.log('updateUI');
